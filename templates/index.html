@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mars Data</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="jumbotron text-center">
+      <h1>Mission to Mars</h1>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12 margin">
+        <h2><strong>Latest Mars News</strong></h2>  
+        <h3><strong>{{headline.news_title}}</strong></h3>
+        <h4>{{headline.news_p}}</h4>
+        <div class="row">
+          <div class="col-md-6">
+            <h1><strong>Feattured Mars Image</strong></h1>
+            <img src="{{headline.featured_image_url}}" class="image_align" width="100%" height="50%">
+          </div>
+          <div class="col-md-6">
+            <div class="row">
+              <div class="card" style="width: 30rem;">
+                <div class="card-body">
+                  <h3 class="card-title">Current weather on Mars</h3>
+                  <p class="card-text">{{headline.mars_weather}}</p>
+                </div>
+              </div>
+             </div>
+             <div class="row" id="table">
+              {{headline.mars_facts|safe}}                 
+             </div>
+           </div> 
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <h3><string>Mars Hemispheres</string></h3>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="card" style="width: 18rem;">
+                  <img src="{{headline.mars_hemispheres[0]['img_url']}}" width="400px" height="400px" class="card-img-top margin" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">{{headline.mars_hemispheres[0]['title']}}</h5>
+                    </div>
+                 </div>
+               </div>
+               <div class="col-md-6">
+                  <div class="card" style="width: 18rem;">
+                     <img src="{{headline.mars_hemispheres[1]['img_url']}}" width="400px" height="400px" class="card-img-top" alt="...">
+                     <div class="card-body">
+                       <h5 class="card-title">{{headline.mars_hemispheres[1]['title']}}</h5>
+                     </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="card" style="width: 18rem;">
+                    <img src="{{headline.mars_hemispheres[2]['img_url']}}" width="400px" height="400px" class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title">{{headline.mars_hemispheres[2]['title']}}</h5>
+                      </div>
+                   </div>
+                 </div>
+                 <div class="col-md-6">
+                    <div class="card" style="width: 18rem;">
+                       <img src="{{headline.mars_hemispheres[3]['img_url']}}" width="400px" height="400px" class="card-img-top" alt="...">
+                       <div class="card-body">
+                         <h5 class="card-title">{{headline.mars_hemispheres[3]['title']}}</h5>
+                       </div>
+                    </div>
+                  </div>
+                </div>   
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+
+</html>
+
